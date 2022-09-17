@@ -1,59 +1,141 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+var NewComponent = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <title>Restaurante Jocka </title>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC" />
+        <style dangerouslySetInnerHTML={{__html: "\nbody, html {height: 100%}\nbody,h1,h2,h3,h4,h5,h6 {font-family: \"Helvetica\", sans-serif}\n.menu {display: none}\n.bgimg {\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-image: url(\"/w3images/pizza.jpg\");\n  min-height: 90%;\n}\n" }} />
+        {/* Navbar (sit on top) */}
+        <div className="w3-top w3-hide-small">
+          <div className="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+            <a href="#" className="w3-bar-item w3-button">HOME</a>
+            <a href="#menu" className="w3-bar-item w3-button">MENU</a>
+            <a href="#about" className="w3-bar-item w3-button">SOBRE</a>
+            <a href="#myMap" className="w3-bar-item w3-button">CONTATO</a>
+          </div>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a href="https://next.new" target="_blank" rel="noopener noreferrer">
-          Created with&nbsp;<b>next.new</b>&nbsp;⚡️
-        </a>
-      </footer>
-    </div>
-  );
-}
+        {/* Header with image */}
+        <header className="bgimg w3-display-container w3-red " id="home">
+          <div className="w3-display-bottomleft w3-padding">
+            <span className="w3-tag w3-xlarge">Aberto das 11 as 20</span>
+          </div>
+          <div className="w3-display-middle w3-center">
+            <span className="w3-text-black w3-hide-small" style={{fontSize: '70px'}}>CONFIRA!<br />O CARDÁPIO</span>
+            <span className="w3-text-white w3-hide-large w3-hide-medium" style={{fontSize: '60px'}}><b>Pizza<br />Grossa</b></span>
+            <p><a href="#menu" className="w3-button w3-xxlarge w3-black">Vamos ao Menu</a></p>
+          </div>
+        </header>
+        {/* Menu Container */}
+        <div className="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+          <div className="w3-content">
+            <h1 className="w3-center w3-jumbo" style={{marginBottom: '64px'}}>O MENU</h1>
+            <div className="w3-row w3-center w3-border w3-border-dark-grey">
+              <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
+                <div className="w3-col s4 tablink w3-padding-large w3-hover-red">Pizza</div>
+              </a>
+              <a href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
+                <div className="w3-col s4 tablink w3-padding-large w3-hover-red">Salada</div>
+              </a>
+              <a href="javascript:void(0)" onclick="openMenu(event, 'Starter');">
+                <div className="w3-col s4 tablink w3-padding-large w3-hover-red">Entrada</div>
+              </a>
+            </div>
+            <div id="Pizza" className="w3-container menu w3-padding-32 w3-white">
+              <h1><b>Calabresa</b> <span className="w3-right w3-tag w3-dark-grey w3-round">R$45.50</span></h1>
+              <p className="w3-text-grey">Molho de tomate, Mussarela, Calabresa e Cebola</p>
+              <hr />
+              <h1><b>Quatro queijos</b> <span className="w3-right w3-tag w3-white w3-round">R$35.50</span></h1>
+              <p className="w3-text-grey">Quatro queijos(Mussarela, parmesão, Queijo Minas, jarlsberg)</p>
+              <hr />
+              <h1><b>Frango c/Catupiry</b> <span className="w3-right w3-tag w3-white w3-round">R$55.00</span></h1>
+              <p className="w3-text-grey">Frango desfiado e Catupiry</p>
+              <hr />
+              <h1><b>Abacaxi na hora</b> <span className="w3-right w3-tag w3-white w3-round">R$16.50</span></h1>
+              <p className="w3-text-grey">Tomates Frescos, Mussarela, Abacaxi fresco, bacon</p>
+              <hr />
+              <h1><b>Combo de carne</b> <span className="w3-tag w3-red w3-round">Hot!</span><span className="w3-right w3-tag w3-dark-grey w3-round">R$20.00</span></h1>
+              <p className="w3-text-grey">Tomates frescos, Mussarela, Pepperoni, Salsicha, bife, frango</p>
+              <hr />
+              <h1><b>Parma</b> <span className="w3-tag w3-grey w3-round">novo&gt;<span className="w3-right w3-tag w3-dark-grey w3-round">R$21.50</span></span></h1>
+              <p className="w3-text-grey">Fresh tomatoes, mozzarella, parma, bacon, fresh arugula</p>
+            </div>
+            <div id="Pasta" className="w3-container menu w3-padding-32 w3-white">
+              <h1><b>Lasanha</b> <span className="w3-tag w3-grey w3-round">Popular</span> <span className="w3-right w3-tag w3-dark-grey w3-round">R$33.50</span></h1>
+              <p className="w3-text-grey"> mussarela, parmesão, Bife assado</p>
+              <hr />
+              <h1><b>Ravioli</b> <span className="w3-right w3-tag w3-dark-grey w3-round">R$14.50</span></h1>
+              <p className="w3-text-grey">Ravioli desfiado com queijo</p>
+              <hr />
+              <h1><b>Spaghetti Classica</b> <span className="w3-right w3-tag w3-dark-grey w3-round">R$35.00</span></h1>
+              <p className="w3-text-grey">Tomates Frescos, Cebola, Bife</p>
+              <hr />
+              <h1><b>Massa de Seafood</b> <span className="w3-right w3-tag w3-dark-grey w3-round">R$25.50</span></h1>
+              <p className="w3-text-grey">Salmão, Camarão, Macarrão</p>
+            </div>
+            <div id="Starter" className="w3-container menu w3-padding-32 w3-white">
+              <h1><b>Sopa do dia</b> <span className="w3-tag w3-grey w3-round">Sensacional</span><span className="w3-right w3-tag w3-dark-grey w3-round">R$15.50</span></h1>
+              <p className="w3-text-grey">Fale com o Garçom</p>
+              <hr />
+              <h1><b>Canapés</b> <span className="w3-right w3-tag w3-dark-grey w3-round">R$8.50</span></h1>
+              <p className="w3-text-grey">base de quadradinhos de pão torrado com creme</p>
+              <hr />
+              <h1><b>Pão Assado</b> <span className="w3-right w3-tag w3-dark-grey w3-round">R$9.50</span></h1>
+              <p className="w3-text-grey">Manteiga derretida no pão quente</p>
+              <hr />
+              <h1><b>Tomozzarella</b> <span className="w3-right w3-tag w3-dark-grey w3-round">R$10.50</span></h1>
+              <p className="w3-text-grey">Tomates e Mussarela</p>
+            </div><br />
+          </div>
+        </div>
+        {/* About Container */}
+        <div className="w3-container w3-padding-64 w3-red w3-xlarge" id="about">
+          <div className="w3-content">
+            <h1 className="w3-center w3-jumbo" style={{marginBottom: '64px'}}>Sobre</h1>
+            <p>O nosso restaurante foi fundado há muito tempo em 2022, fazemos pratos italianos e outros pratos internacionais famosos.</p>
+            <p><strong>O Chef?</strong>chef<img src="img/chef.jpg" style={{width: '150px'}} className="w3-circle w3-right" alt="Chef" /></p>
+            <p>Nos orgulhamos do nosso salão.</p>
+            <img src="img/restaurante.jpg" style={{width: '75%'}} className="w3-margin-top w3-margin-bottom" alt="Restaurant" />
+            <h1><b>Horários Abertos</b></h1>
+            <div className="w3-row">
+              <div className="w3-col s6">
+                <p>Segunda e terça fechado</p>
+                <p>Quarta 11.00 - 20.00</p>
+                <p>Quinta 11:00 - 20:00</p>
+              </div>
+              <div className="w3-col s6">
+                <p>Sexta 11:00 - 20:00</p>
+                <p>Sabado 12:00 - 22:00</p>
+                <p>Domingo Fechado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Image of location/map */}
+        <img src="/img/chef.jpg" className="w3-image w3-greyscale" style={{width: '100%'}} id="myMap" />
+        {/* Contact */}
+        <div className="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
+          <div className="w3-content">
+            <h1 className="w3-center w3-jumbo" style={{marginBottom: '64px'}}>Contato</h1>
+            <p>Voce pode nos encontrar em algun endereço em algum lugar ou ligue 70028922</p>
+            <p><span className="w3-tag">FYI!</span>Oferecemos um ótimo serviço para qualquer lugar e evento, seja ele grande ou pequeno. Nós entendemos da sua necessidade e faremos o melhor para sua felicidade!</p>
+            <p className="w3-xxlarge"><strong>Reserve</strong> uma mesa,peça o especial de hoje ou mande uma mensagem:</p>
+            <form action="/action_page.php" target="_blank">
+              <p><input className="w3-input w3-padding-16 w3-border" type="text" placeholder="Nome" required name="Nome" /></p>
+              <p><input className="w3-input w3-padding-16 w3-border" type="number" placeholder="numero de pessoas" required name="pessoas" /></p>
+              <p><input className="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Data e Hora" required name="date" defaultValue="2020-11-16T20:00" /></p>
+              <p><input className="w3-input w3-padding-16 w3-border" type="text" placeholder="Mensagem \ Pedidos especiais" required name="Mensagem" /></p>
+              <p><button className="w3-button w3-light-grey w3-block" type="submit">Mande uma Mensagem</button></p>
+            </form>
+          </div>
+        </div>
+        {/* Footer */}
+        <footer className="w3-center w3-black w3-padding-48 w3-xxlarge">
+          <p>Feito por <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" className="w3-hover-text-green">David e Ryan</a></p>
+        </footer>
+      </div>
+    );
+  }
+});
