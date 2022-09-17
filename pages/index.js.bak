@@ -1,5 +1,8 @@
-var NewComponent = React.createClass({
-  render: function() {
+import Head from 'next/head';
+import image frpm 'next/image';
+import styles from '../styles/Home.module.css';
+
+export default function Home() {
     return (
       <div>
         <title>Restaurante Jocka </title>
