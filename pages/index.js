@@ -4,138 +4,143 @@ import styles from '../styles/Home.module.css';
 export default function Home() {
     return (
       <div>
-        <title>Restaurante Jocka </title>
+        <title>GNR</title>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC" />
-        <style dangerouslySetInnerHTML={{__html: "\nbody, html {height: 100%}\nbody,h1,h2,h3,h4,h5,h6 {font-family: \"Helvetica\", sans-serif}\n.menu {display: none}\n.bgimg {\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-image: url(\"/w3images/pizza.jpg\");\n  min-height: 90%;\n}\n" }} />
-        {/* Navbar (sit on top) */}
-        <div className="w3-top w3-hide-small">
-          <div className="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
-            <a href="#" className="w3-bar-item w3-button">HOME</a>
-            <a href="#menu" className="w3-bar-item w3-button">MENU</a>
-            <a href="#about" className="w3-bar-item w3-button">SOBRE</a>
-            <a href="#myMap" className="w3-bar-item w3-button">CONTATO</a>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <style dangerouslySetInnerHTML={{__html: "\nbody {font-family: \"Lato\", sans-serif}\n.mySlides {display: none}\n" }} />
+        {/* Navbar */}
+        <div className="w3-top">
+          <div className="w3-bar w3-black w3-card">
+            <a className="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i className="fa fa-bars" /></a>
+            <a href="#" className="w3-bar-item w3-button w3-padding-large">HOME</a>
+            <a href="#tour" className="w3-bar-item w3-button w3-padding-large w3-hide-small">TOUR</a>
+            <a href="#contact" className="w3-bar-item w3-button w3-padding-large w3-hide-small">SORTEIO</a>
           </div>
         </div>
-        {/* Header with image */}
-        <header className="bgimg w3-display-container w3-red " id="home">
-          <div className="w3-display-bottomleft w3-padding">
-            <span className="w3-tag w3-xlarge">Aberto das 11 as 20</span>
-          </div>
-          <div className="w3-display-middle w3-center">
-            <span className="w3-text-black w3-hide-small" style={{fontSize: '70px'}}>CONFIRA!<br />O CARDÁPIO</span>
-            <span className="w3-text-white w3-hide-large w3-hide-medium" style={{fontSize: '60px'}}><b>Pizza<br />Grossa</b></span>
-            <p><a href="#menu" className="w3-button w3-xxlarge w3-black">Vamos ao Menu</a></p>
-          </div>
-        </header>
-        {/* Menu Container */}
-        <div className="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
-          <div className="w3-content">
-            <h1 className="w3-center w3-jumbo" style={{marginBottom: '64px'}}>O MENU</h1>
-            <div className="w3-row w3-center w3-border w3-border-dark-grey">
-              <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
-                <div className="w3-col s4 tablink w3-padding-large w3-hover-red">Pizza</div>
-              </a>
-              <a href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
-                <div className="w3-col s4 tablink w3-padding-large w3-hover-red">Salada</div>
-              </a>
-              <a href="javascript:void(0)" onclick="openMenu(event, 'Starter');">
-                <div className="w3-col s4 tablink w3-padding-large w3-hover-red">Entrada</div>
-              </a>
-            </div>
-            <div id="Pizza" className="w3-container menu w3-padding-32 w3-white">
-              <h1><b>Calabresa</b> <span className="w3-right w3-tag w3-dark-grey w3-round">R$45.50</span></h1>
-              <p className="w3-text-grey">Molho de tomate, Mussarela, Calabresa e Cebola</p>
-              <hr />
-              <h1><b>Quatro queijos</b> <span className="w3-right w3-tag w3-white w3-round">R$35.50</span></h1>
-              <p className="w3-text-grey">Quatro queijos(Mussarela, parmesão, Queijo Minas, jarlsberg)</p>
-              <hr />
-              <h1><b>Frango c/Catupiry</b> <span className="w3-right w3-tag w3-white w3-round">R$55.00</span></h1>
-              <p className="w3-text-grey">Frango desfiado e Catupiry</p>
-              <hr />
-              <h1><b>Abacaxi na hora</b> <span className="w3-right w3-tag w3-white w3-round">R$16.50</span></h1>
-              <p className="w3-text-grey">Tomates Frescos, Mussarela, Abacaxi fresco, bacon</p>
-              <hr />
-              <h1><b>Combo de carne</b> <span className="w3-tag w3-red w3-round">Hot!</span><span className="w3-right w3-tag w3-dark-grey w3-round">R$20.00</span></h1>
-              <p className="w3-text-grey">Tomates frescos, Mussarela, Pepperoni, Salsicha, bife, frango</p>
-              <hr />
-              <h1><b>Parma</b> <span className="w3-tag w3-grey w3-round">novo&gt;<span className="w3-right w3-tag w3-dark-grey w3-round">R$21.50</span></span></h1>
-              <p className="w3-text-grey">Fresh tomatoes, mozzarella, parma, bacon, fresh arugula</p>
-            </div>
-            <div id="Pasta" className="w3-container menu w3-padding-32 w3-white">
-              <h1><b>Lasanha</b> <span className="w3-tag w3-grey w3-round">Popular</span> <span className="w3-right w3-tag w3-dark-grey w3-round">R$33.50</span></h1>
-              <p className="w3-text-grey"> mussarela, parmesão, Bife assado</p>
-              <hr />
-              <h1><b>Ravioli</b> <span className="w3-right w3-tag w3-dark-grey w3-round">R$14.50</span></h1>
-              <p className="w3-text-grey">Ravioli desfiado com queijo</p>
-              <hr />
-              <h1><b>Spaghetti Classica</b> <span className="w3-right w3-tag w3-dark-grey w3-round">R$35.00</span></h1>
-              <p className="w3-text-grey">Tomates Frescos, Cebola, Bife</p>
-              <hr />
-              <h1><b>Massa de Seafood</b> <span className="w3-right w3-tag w3-dark-grey w3-round">R$25.50</span></h1>
-              <p className="w3-text-grey">Salmão, Camarão, Macarrão</p>
-            </div>
-            <div id="Starter" className="w3-container menu w3-padding-32 w3-white">
-              <h1><b>Sopa do dia</b> <span className="w3-tag w3-grey w3-round">Sensacional</span><span className="w3-right w3-tag w3-dark-grey w3-round">R$15.50</span></h1>
-              <p className="w3-text-grey">Fale com o Garçom</p>
-              <hr />
-              <h1><b>Canapés</b> <span className="w3-right w3-tag w3-dark-grey w3-round">R$8.50</span></h1>
-              <p className="w3-text-grey">base de quadradinhos de pão torrado com creme</p>
-              <hr />
-              <h1><b>Pão Assado</b> <span className="w3-right w3-tag w3-dark-grey w3-round">R$9.50</span></h1>
-              <p className="w3-text-grey">Manteiga derretida no pão quente</p>
-              <hr />
-              <h1><b>Tomozzarella</b> <span className="w3-right w3-tag w3-dark-grey w3-round">R$10.50</span></h1>
-              <p className="w3-text-grey">Tomates e Mussarela</p>
-            </div><br />
-          </div>
+        <a href="javascript:void(0)" className="w3-padding-large w3-hover-red w3-hide-small w3-right"><i className="fa fa-search" /></a>
+        {/* Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) */}
+        <div id="navDemo" className="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style={{marginTop: '46px'}}>
+          <a href="#tour" className="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
+          <a href="#contact" className="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTATO</a>
         </div>
-        {/* About Container */}
-        <div className="w3-container w3-padding-64 w3-red w3-xlarge" id="about">
-          <div className="w3-content">
-            <h1 className="w3-center w3-jumbo" style={{marginBottom: '64px'}}>Sobre</h1>
-            <p>O nosso restaurante foi fundado há muito tempo em 2022, fazemos pratos italianos e outros pratos internacionais famosos.</p>
-            <p><strong>O Chef?</strong>chef<img src="img/chef.jpg" style={{width: '150px'}} className="w3-circle w3-right" alt="Chef" /></p>
-            <p>Nos orgulhamos do nosso salão.</p>
-            <img src="img/restaurante.jpg" style={{width: '75%'}} className="w3-margin-top w3-margin-bottom" alt="Restaurant" />
-            <h1><b>Horários Abertos</b></h1>
-            <div className="w3-row">
-              <div className="w3-col s6">
-                <p>Segunda e terça fechado</p>
-                <p>Quarta 11.00 - 20.00</p>
-                <p>Quinta 11:00 - 20:00</p>
+        {/* Page content */}
+        <div className="w3-content" style={{maxWidth: '2000px', marginTop: '46px'}}>
+          {/* Automatic Slideshow Images */}
+          <div className="mySlides w3-display-container w3-center">
+            <img src="/download.jpg" style={{width: '100%'}} />
+          </div>
+          <div className="mySlides w3-display-container w3-center">
+            <img src="/gnr.jpg" style={{width: '100%'}} />
+          </div>
+          {/* The Band Section */}
+          <div className="w3-container w3-content w3-center w3-padding-64" style={{maxWidth: '800px'}} id="band">
+            <h2 className="w3-wide">Guns n'Roses </h2>
+            <p className="w3-opacity"><i>Quem São</i></p>
+            <p className="w3-justify">Guns N' Roses, banda americana que revigorou o heavy metal do final dos anos 1980 com sua energia bruta. Os membros principais eram Axl Rose (nome original William Bailey; nascido em 6 de fevereiro de 1962, Lafayette, Indiana, EUA), Slash (nome original Saul Hudson; nascido em 23 de julho de 1965, Stoke-on-Trent, Staffordshire, Inglaterra) , Duff McKagan (nome original Michael McKagan; nascido em 5 de fevereiro de 1964, Seattle, Washington, EUA), Izzy Stradlin (nome original Jeff Isbell; nascido em 8 de abril de 1962, Lafayette, Indiana), Steve Adler (nascido em 22 de janeiro , 1965, Cleveland, Ohio, EUA), Matt Sorum (nascido em 19 de novembro de 1960, Long Beach, Califórnia, EUA), Dizzy Reed (nome original Darren Reed; nascido em 18 de junho de 1963, Hinsdale, Illinois, EUA), e Gilby Clarke (nascido em 17 de agosto de 1962, Cleveland, Ohio).
+              O Guns N' Roses foi formado em Los Angeles em 1985 por Rose e Stradlin. Após mudanças no pessoal, a formação da banda se estabilizou com Rose como vocalista, McKagan no baixo, Adler na bateria e Slash e Stradlin na guitarra. Assinando com a Geffen Records, eles lançaram o extended play Live ?!*@ Like a Suicide em 1986, seguido pelo álbum Appetite for Destruction em 1987. o álbum um grande sucesso, com vendas de mais de 17 milhões.</p>
+            <div className="w3-row w3-padding-32">
+              <div className="w3-third">
+                <p>Axel</p>
+                <img src="/axel.jpg" className="w3-round w3-margin-bottom" alt="Random Name" style={{width: '60%'}} />
               </div>
-              <div className="w3-col s6">
-                <p>Sexta 11:00 - 20:00</p>
-                <p>Sabado 12:00 - 22:00</p>
-                <p>Domingo Fechado</p>
+              <div className="w3-third">
+                <p>slash</p>
+                <img src="/slash.jpg" className="w3-round w3-margin-bottom" alt="Random Name" style={{width: '60%'}} />
               </div>
             </div>
           </div>
+          {/* The Tour Section */}
+          <div className="w3-black" id="tour">
+            <div className="w3-container w3-content w3-padding-64" style={{maxWidth: '800px'}}>
+              <h2 className="w3-wide w3-center">TOUR DATES</h2>
+              <p className="w3-opacity w3-center"><i>COMPRE SEUS INGRESSOS</i></p><br />
+              <ul className="w3-ul w3-border w3-white w3-text-grey">
+                <li className="w3-padding">SETEMBRO <span className="w3-tag w3-red w3-margin-left">Esgotado</span></li>
+                <li className="w3-padding">OUTUBRO <span className="w3-tag w3-red w3-margin-left">Esgotado</span></li>
+                <li className="w3-padding">NOVEMBRO <span className="w3-badge w3-right w3-margin-right">3</span></li>
+              </ul>
+              <div className="w3-row-padding w3-padding-32" style={{margin: '0 -16px'}}>
+                <div className="w3-third w3-margin-bottom">
+                  <div className="w3-container w3-white">
+                    <p><b>Chile</b></p>
+                    <p className="w3-opacity">27 set 2022</p>
+                    <button className="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">COMPRE INGRESSOS</button>
+                  </div>
+                </div>
+                <div className="w3-third w3-margin-bottom">
+                  <div className="w3-container w3-white">
+                    <p><b>Brasil</b></p>
+                    <p className="w3-opacity">28 out 2022</p>
+                    <button className="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">COMPRE INGRESSOS</button>
+                  </div>
+                </div>
+                <div className="w3-third w3-margin-bottom">
+                  <div className="w3-container w3-white">
+                    <p><b>Argentina</b></p>
+                    <p className="w3-opacity">29 Nov 2022</p>
+                    <button className="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">	COMPRE INGRESSOS</button>
+                  </div>S
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Ticket Modal */}
+          <div id="ticketModal" className="w3-modal">
+            <div className="w3-modal-content w3-animate-top w3-card-4">
+              <header className="w3-container w3-teal w3-center w3-padding-32"> 
+                <span onclick="document.getElementById('ticketModal').style.display='none'" className="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+                <h2 className="w3-wide"><i className="fa fa-suitcase w3-margin-right" />Ingressos</h2>
+              </header>
+              <div className="w3-container">
+                <p><label><i className="fa fa-shopping-cart" /> Ingresso, R$500 por pessoa</label></p>
+                <input className="w3-input w3-border" type="text" placeholder="Nome" />
+                <p><label><i className="fa fa-user" />ENVIAR</label></p>
+                <input className="w3-input w3-border" type="text" placeholder="Email" />
+                <button className="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAGUE <i className="fa fa-check" /></button>
+                <button className="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Fechar <i className="fa fa-remove" /></button>
+                <p className="w3-right">Precisa de  <a href="#" className="w3-text-blue">ajuda?</a></p>
+              </div>
+            </div>
+          </div>
+          {/* The Contact Section */}
+          <div className="w3-container w3-content w3-padding-64" style={{maxWidth: '800px'}} id="contact">
+            <h2 className="w3-wide w3-center">PREENCHA SEUS DADOS</h2>
+            <p className="w3-opacity w3-center"><i>Fã? deixe uma mensagem</i></p>
+            <div className="w3-row w3-padding-32">
+              <div className="w3-col m6 w3-large w3-margin-bottom">
+              </div>
+              <div className="w3-col m6">
+                <form action="/action_page.php" target="_blank">
+                  <div className="w3-row-padding" style={{margin: '0 -16px 8px -16px'}}>
+                    <div className="w3-half">
+                      <input className="w3-input w3-border" type="text" placeholder="Nome" required name="Nome" />
+                    </div>
+                    <div className="w3-half">
+                      <input className="w3-input w3-border" type="text" placeholder="Email" required name="Email" />
+                    </div>
+                  </div>
+                  <input className="w3-input w3-border" type="text" placeholder="Message" required name="Message" />
+                  <button className="w3-button w3-black w3-section w3-right" type="submit">MANDAR</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          {/* End Page Content */}
         </div>
         {/* Image of location/map */}
-        <img src="/img/chef.jpg" className="w3-image w3-greyscale" style={{width: '100%'}} id="myMap" />
-        {/* Contact */}
-        <div className="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
-          <div className="w3-content">
-            <h1 className="w3-center w3-jumbo" style={{marginBottom: '64px'}}>Contato</h1>
-            <p>Voce pode nos encontrar em algun endereço em algum lugar ou ligue 70028922</p>
-            <p><span className="w3-tag">FYI!</span>Oferecemos um ótimo serviço para qualquer lugar e evento, seja ele grande ou pequeno. Nós entendemos da sua necessidade e faremos o melhor para sua felicidade!</p>
-            <p className="w3-xxlarge"><strong>Reserve</strong> uma mesa,peça o especial de hoje ou mande uma mensagem:</p>
-            <form action="/action_page.php" target="_blank">
-              <p><input className="w3-input w3-padding-16 w3-border" type="text" placeholder="Nome" required name="Nome" /></p>
-              <p><input className="w3-input w3-padding-16 w3-border" type="number" placeholder="numero de pessoas" required name="pessoas" /></p>
-              <p><input className="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Data e Hora" required name="date" defaultValue="2020-11-16T20:00" /></p>
-              <p><input className="w3-input w3-padding-16 w3-border" type="text" placeholder="Mensagem \ Pedidos especiais" required name="Mensagem" /></p>
-              <p><button className="w3-button w3-light-grey w3-block" type="submit">Mande uma Mensagem</button></p>
-            </form>
-          </div>
-        </div>
+        <img src="/w3images/map.jpg" className="w3-image w3-greyscale-min" style={{width: '100%'}} />
         {/* Footer */}
-        <footer className="w3-center w3-black w3-padding-48 w3-xxlarge">
-          <p>Feito por <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" className="w3-hover-text-green">David e Ryan</a></p>
+        <footer className="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+          <i className="fa fa-facebook-official w3-hover-opacity" />
+          <i className="fa fa-instagram w3-hover-opacity" />
+          <i className="fa fa-snapchat w3-hover-opacity" />
+          <i className="fa fa-pinterest-p w3-hover-opacity" />
+          <i className="fa fa-twitter w3-hover-opacity" />
+          <i className="fa fa-linkedin w3-hover-opacity" />
+          <p className="w3-medium">Feito por <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">David e Ryan</a></p>
         </footer>
       </div>
     );
